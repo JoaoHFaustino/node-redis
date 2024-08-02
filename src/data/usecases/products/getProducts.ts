@@ -1,7 +1,9 @@
 import { IGetProductsProtocol } from "@/domain/protocols/products";
+import redisClient from "@/infra/cache/redisClient";
 
 export class GetProducts implements IGetProductsProtocol {
-    getProducts(params: IGetProductsProtocol.Params): Promise<IGetProductsProtocol.Result> {
-        throw new Error("Method not implemented.");
-    }
+  async getProducts(): Promise<IGetProductsProtocol.Result> {
+    const products = await redisClient.getAll();
+    return { products };
+  }
 }
