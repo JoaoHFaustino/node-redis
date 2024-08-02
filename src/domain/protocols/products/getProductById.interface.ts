@@ -1,7 +1,7 @@
 
 export namespace IGetProductByIdProtocol {
     export type Params = GetProductByIdParams;
-    export type Result = GetProductByIdResult;
+    export type Result = GetProductByIdResult | null;
 }
 
 interface GetProductByIdParams {

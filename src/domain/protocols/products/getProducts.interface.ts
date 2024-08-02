@@ -1,12 +1,8 @@
 
 export namespace IGetProductsProtocol {
-    export type Params = GetProductsParams;
     export type Result = GetProductsResult;
 }
-
-interface GetProductsParams {
-    id: number
-}
+ 
 
 interface GetProductsResult {
     products: Array<
@@ -17,5 +13,5 @@ interface GetProductsResult {
 }
 
 export interface IGetProductsProtocol {
-    getProducts(params: IGetProductsProtocol.Params): Promise<IGetProductsProtocol.Result>
+    getProducts(): Promise<IGetProductsProtocol.Result>
 }
